@@ -126,7 +126,7 @@
         /* Loading Spinner */
         .spinner {
             border: 4px solid rgba(102, 126, 234, 0.1);
-            border-top: 4px solid #667eea;
+            border-top: 4px solid #764ba2;
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -632,7 +632,7 @@
         input:focus,
         select:focus,
         textarea:focus {
-            outline: 2px solid #667eea;
+            outline: 2px solid #764ba2;
             outline-offset: 2px;
         }
 
@@ -640,34 +640,99 @@
         a, button, input, select, textarea {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+@media (max-width: 768px) {
+        /* Push badge down a bit more on mobile + make it slightly smaller */
+        [style*="Local Windhoek Service"] {
+            margin-top: 40px !important;      /* pushes it down from top */
+            margin-bottom: 35px !important;   /* more space below */
+            padding: 6px 16px !important;     /* slightly smaller padding */
+            font-size: 13px !important;       /* slightly smaller text */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        /* Even more compact on very small phones */
+        [style*="Local Windhoek Service"] {
+            margin-top: 30px !important;
+            margin-bottom: 30px !important;
+            padding: 5px 14px !important;
+            font-size: 12px !important;
+        }
+    }
+        
+    @media (max-width: 768px) {
+        .trailer-image {
+            height: 320px !important; /* shorter on mobile to avoid squashing */
+            border-radius: 12px !important;
+        }
+        .trailer-image img {
+            object-fit: contain !important;
+            height: auto !important;
+        }
+        .trailer-image div:last-child { /* badge */
+            top: 15px !important;
+            right: 15px !important;
+            padding: 8px 18px !important;
+            font-size: 13px !important;
+        }
+    }
     </style>
 </head>
 <body>
-
 <!-- Mobile Menu Overlay -->
 <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
 
 <!-- Navigation -->
 <nav id="navbar" style="position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); box-shadow: 0 2px 20px rgba(0,0,0,0.1); z-index: 1000; transition: all 0.3s ease;">
     <div class="nav-container" style="max-width: 1400px; margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                <i class="fas fa-trailer" style="color: white; font-size: 24px;"></i>
-            </div>
-            <div>
-                <h1 style="margin: 0; font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">TrailerPro</h1>
-                <p style="margin: 0; font-size: 11px; color: #666; font-weight: 500;">Premium Hire Namibia</p>
-            </div>
-        </div>
+       <div style="display: flex; align-items: center; gap: 16px;">
+    <!-- Logo image placeholder (replace src with your actual logo file/URL) -->
+    <div style="
+        width: 60px;
+        height: 60px;
+        background: #000;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        transition: transform 0.3s ease;
+    " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="./logo1.png" alt="WC Trailer Hire Logo" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+    </div>
+    
+    <!-- Text – solid gold, bold, stands out nicely, no gradient -->
+    <div style="display: flex; flex-direction: column;">
+        <h1 style="
+            margin: 0;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            color: #D4AF37;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+            transition: transform 0.3s ease;
+        " onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            WC Trailer Hire
+        </h1>
+        <!-- Optional small tagline – remove if not wanted -->
+        <p style="
+            margin: 3px 0 0 0;
+            font-size: 13px;
+            color: #aaa;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+        ">
+            Reliable Local Trailer Hire
+        </p>
+    </div>
+</div>
         
         <div id="navMenu" class="nav-menu">
-            <a href="#home" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#333'">Home</a>
-            <a href="#about" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#333'">About Us</a>
-            <a href="#trailer" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#333'">Our Trailer</a>
-            <a href="#features" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#333'">Features</a>
-            <a href="#pricing" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#333'">Pricing</a>
-            <a href="#contact" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#333'">Contact</a>
-            <a href="#booking" style="text-decoration: none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 28px; border-radius: 25px; font-weight: 600; font-size: 14px; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'">Book Now</a>
+            <a href="#home" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#333'">Home</a>
+            <a href="#about" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#333'">About Us</a>
+            <a href="#trailer" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#333'">Our Trailer</a>
+            <a href="#features" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#333'">Why Hire From Us</a>
+            <a href="#pricing" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#333'">Pricing</a>
+            <a href="#contact" style="text-decoration: none; color: #333; font-weight: 500; font-size: 15px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#333'">Contact</a>
+            <a href="#booking" style="text-decoration: none; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 12px 28px; border-radius: 25px; font-weight: 600; font-size: 14px; box-shadow: 0 4px 15px rgba(212,175,55,0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(212,175,55,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212,175,55,0.4)'">Hire Now</a>
         </div>
         
         <button class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -679,70 +744,78 @@
 </nav>
 
 <!-- Hero Section -->
-<section id="home" class="loading" style="min-height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding-top: 90px; display: flex; align-items: center; position: relative; overflow: hidden;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); opacity: 0.6;"></div>
+<section id="home" class="loading" style="min-height: 100vh; background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); padding-top: 90px; display: flex; align-items: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%); opacity: 0.7;"></div>
     
     <div style="max-width: 1400px; margin: 0 auto; padding: 60px 40px; width: 100%; position: relative; z-index: 1;">
         <div class="hero-grid">
             <div style="animation: fadeInLeft 1s ease-out;">
-                <div style="display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 8px 20px; border-radius: 30px; margin-bottom: 25px;">
-                    <span style="color: white; font-size: 14px; font-weight: 600;">🇳🇦 Proudly Namibian</span>
-                </div>
-                <h1 style="font-size: 64px; font-weight: 800; color: white; margin: 0 0 25px 0; line-height: 1.1;">Your Perfect Trailer<br/>Journey Awaits</h1>
-                <p style="font-size: 20px; color: rgba(255,255,255,0.95); margin-bottom: 40px; line-height: 1.7; font-weight: 400;">Experience premium trailer hire service across Namibia. Whether it's moving, hauling, or adventure - we've got you covered with reliability and style.</p>
+               <div style="
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    margin-top: 0;
+">
+    <span style="color: white; font-size: 14px; font-weight: 600;">Local Windhoek Service</span>
+</div>
+                <h1 style="font-size: 64px; font-weight: 800; color: white; margin: 0 0 25px 0; line-height: 1.1;">3 Meter Trailer<br>For Hire in Windhoek</h1>
+                <p style="font-size: 20px; color: rgba(255,255,255,0.95); margin-bottom: 40px; line-height: 1.7; font-weight: 400;">N$850 per 24 hours • L 3m × W 1.5m × H 1.8m • Double axle • Reliable daily hire from Khomasdal</p>
                 
                 <div class="hero-buttons" style="display: flex; gap: 20px; margin-bottom: 50px; flex-wrap: wrap;">
-                    <a href="#booking" style="text-decoration: none; background: white; color: #667eea; padding: 18px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: inline-block;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)'">
-                        <i class="fas fa-calendar-check" style="margin-right: 10px;"></i>Book Now
+                    <a href="#booking" style="text-decoration: none; background: white; color: #D4AF37; padding: 18px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: inline-block;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)'">
+                        <i class="fas fa-calendar-check" style="margin-right: 10px;"></i>Hire Now
                     </a>
                     <a href="#trailer" style="text-decoration: none; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; padding: 18px 40px; border-radius: 30px; font-weight: 600; font-size: 16px; border: 2px solid rgba(255,255,255,0.3); display: inline-block;" onmouseover="this.style.background='rgba(255,255,255,0.25)'; this.style.borderColor='rgba(255,255,255,0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'; this.style.borderColor='rgba(255,255,255,0.3)'">
-                        <i class="fas fa-info-circle" style="margin-right: 10px;"></i>Learn More
+                        <i class="fas fa-info-circle" style="margin-right: 10px;"></i>View Trailer
                     </a>
                 </div>
                 
                 <div class="stats-grid">
                     <div>
-                        <h3 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0;">24/7</h3>
-                        <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-weight: 500;">Available</p>
+                        <h3 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0;">Daily</h3>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-weight: 500;">Hire Available</p>
                     </div>
                     <div>
-                        <h3 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0;">100%</h3>
-                        <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-weight: 500;">Reliable</p>
+                        <h3 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0;">Local</h3>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-weight: 500;">Khomasdal Pickup</p>
                     </div>
                     <div>
-                        <h3 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0;">5★</h3>
-                        <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-weight: 500;">Rated</p>
+                        <h3 style="font-size: 36px; font-weight: 800; color: white; margin: 0 0 5px 0;">Insured</h3>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 14px; font-weight: 500;">Coverage Included</p>
                     </div>
                 </div>
             </div>
             
             <div style="position: relative; animation: fadeInRight 1s ease-out;">
                 <div style="background: white; border-radius: 30px; padding: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
-                    <h3 style="font-size: 28px; font-weight: 700; margin: 0 0 25px 0; color: #333;">Quick Availability Check</h3>
+                    <h3 style="font-size: 28px; font-weight: 700; margin: 0 0 25px 0; color: #333;">Check Availability</h3>
                     
                     <form id="availabilityForm" onsubmit="checkAvailability(event)">
                         <div style="margin-bottom: 20px;">
                             <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Pick Up Date</label>
-                            <input type="date" id="pickupDate" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                            <input type="date" id="pickupDate" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
                         </div>
                         
                         <div style="margin-bottom: 20px;">
                             <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Return Date</label>
-                            <input type="date" id="returnDate" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                            <input type="date" id="returnDate" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
                         </div>
                         
                         <div style="margin-bottom: 25px;">
                             <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Purpose</label>
-                            <select id="purpose" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif; background: white;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
-                                <option>Moving</option>
-                                <option>Hauling</option>
-                                <option>Camping/Safari</option>
-                                <option>Business</option>
+                            <select id="purpose" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif; background: white;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
+                                <option>Moving house or flat</option>
+                                <option>Hauling materials/equipment</option>
+                                <option>Small load transport</option>
+                                <option>Business use</option>
                                 <option>Other</option>
                             </select>
                         </div>
                         
-                        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 35px rgba(102, 126, 234, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(102, 126, 234, 0.4)'">
+                        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(212,175,55,0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 35px rgba(212,175,55,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(212,175,55,0.4)'">
                             <i class="fas fa-check-circle" style="margin-right: 10px;"></i>Check Availability
                         </button>
                     </form>
@@ -750,7 +823,7 @@
                     <div id="availabilityResult" style="margin-top: 20px; display: none;">
                         <div id="loadingSpinner" style="text-align: center; padding: 20px;">
                             <div class="spinner"></div>
-                            <p style="margin-top: 15px; color: #667eea; font-weight: 600;">Checking availability...</p>
+                            <p style="margin-top: 15px; color: #D4AF37; font-weight: 600;">Checking availability...</p>
                         </div>
                         <div id="resultMessage" style="display: none;"></div>
                     </div>
@@ -764,111 +837,151 @@
 <section id="about" class="loading" style="padding: 100px 40px; background: white;">
     <div style="max-width: 1400px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
+            <div style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
                 <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Who We Are</span>
             </div>
-            <h2 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">About TrailerPro Namibia</h2>
-            <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.7;">Proudly serving Windhoek and all of Namibia with premium trailer hire solutions</p>
+            <h2 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">About WC Trailer Hire</h2>
+            <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.7;">Your local trailer hire service in Windhoek – reliable 3m trailers available daily from Khomasdal.</p>
         </div>
 
         <div class="about-grid" style="margin-bottom: 60px;">
-            <div class="animate-card smooth-hover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 25px; padding: 45px 35px; text-align: center; box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3); position: relative; overflow: hidden;">
+            <div class="animate-card smooth-hover" style="background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 25px; padding: 45px 35px; text-align: center; box-shadow: 0 15px 40px rgba(212,175,55,0.3); position: relative; overflow: hidden;">
                 <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
                 <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; position: relative; z-index: 1;">
                     <i class="fas fa-bullseye" style="font-size: 36px; color: white;"></i>
                 </div>
                 <h3 style="font-size: 24px; font-weight: 700; color: white; margin: 0 0 15px 0; position: relative; z-index: 1;">Our Mission</h3>
-                <p style="font-size: 15px; color: rgba(255,255,255,0.95); line-height: 1.7; margin: 0; position: relative; z-index: 1;">To provide Namibians with reliable, affordable, and professional trailer hire services that empower businesses and individuals to move forward with confidence.</p>
+                <p style="font-size: 15px; color: rgba(255,255,255,0.95); line-height: 1.7; margin: 0; position: relative; z-index: 1;">To offer Windhoek residents and businesses a simple, affordable, and dependable trailer rental option right here in Khomasdal – no hassle, just reliable service when you need to move or haul.</p>
             </div>
 
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); opacity: 0.05; border-radius: 50%;"></div>
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; position: relative; z-index: 1;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); opacity: 0.05; border-radius: 50%;"></div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; position: relative; z-index: 1;">
                     <i class="fas fa-eye" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0; position: relative; z-index: 1;">Our Vision</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0; position: relative; z-index: 1;">To be Namibia's most trusted trailer hire company, known for exceptional service, modern equipment, and unwavering commitment to customer satisfaction.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0; position: relative; z-index: 1;">Our Focus</h3>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0; position: relative; z-index: 1;">Local, straightforward trailer hire in Windhoek. We keep things simple: one well-maintained 3m trailer, fair daily rates, and easy access from Khomasdal.</p>
             </div>
 
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); opacity: 0.05; border-radius: 50%;"></div>
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; position: relative; z-index: 1;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); opacity: 0.05; border-radius: 50%;"></div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; position: relative; z-index: 1;">
                     <i class="fas fa-heart" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0; position: relative; z-index: 1;">Our Values</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0; position: relative; z-index: 1;">Integrity, reliability, and excellence in everything we do. We treat every customer like family and every rental like it's our own equipment.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0; position: relative; z-index: 1;">Our Promise</h3>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0; position: relative; z-index: 1;">Reliable equipment, clear pricing (N$850 per 24 hours), quick pickup/drop-off, and friendly local support every time.</p>
             </div>
         </div>
 
         <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 25px; padding: 60px 50px; text-align: center;">
-            <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 25px 0;">The TrailerPro Story</h3>
-            <p style="font-size: 17px; color: #555; line-height: 1.9; max-width: 900px; margin: 0 auto 30px auto;">Founded in the heart of Windhoek, TrailerPro was born from a simple idea: Namibians deserve access to quality trailer hire services without the hassle. We understand the unique challenges of operating in Namibia - from the vast distances to the varied terrain. That's why we've built our business on providing well-maintained, reliable trailers that can handle anything from city moves in Windhoek to adventures across the Namib Desert.</p>
+            <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 25px 0;">WC Trailer Hire</h3>
+            <p style="font-size: 17px; color: #555; line-height: 1.9; max-width: 900px; margin: 0 auto 30px auto;">Based right here in Khomasdal, Windhoek – we provide a practical 3m double-axle trailer for your moving, hauling, or transport needs. Easy access, no complicated bookings, just call us when you're ready.</p>
             <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px;">
                 <div>
-                    <h4 style="font-size: 36px; font-weight: 800; color: #667eea; margin: 0 0 5px 0;">500+</h4>
-                    <p style="color: #666; margin: 0; font-size: 14px;">Happy Customers</p>
+                    <h4 style="font-size: 36px; font-weight: 800; color: #D4AF37; margin: 0 0 5px 0;">N$850</h4>
+                    <p style="color: #666; margin: 0; font-size: 14px;">Per 24 Hours</p>
                 </div>
                 <div>
-                    <h4 style="font-size: 36px; font-weight: 800; color: #667eea; margin: 0 0 5px 0;">5+</h4>
-                    <p style="color: #666; margin: 0; font-size: 14px;">Years Experience</p>
+                    <h4 style="font-size: 36px; font-weight: 800; color: #D4AF37; margin: 0 0 5px 0;">3m</h4>
+                    <p style="color: #666; margin: 0; font-size: 14px;">Trailer Size</p>
                 </div>
                 <div>
-                    <h4 style="font-size: 36px; font-weight: 800; color: #667eea; margin: 0 0 5px 0;">99%</h4>
-                    <p style="color: #666; margin: 0; font-size: 14px;">Satisfaction Rate</p>
+                    <h4 style="font-size: 36px; font-weight: 800; color: #D4AF37; margin: 0 0 5px 0;">Local</h4>
+                    <p style="color: #666; margin: 0; font-size: 14px;">Khomasdal Pickup</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Trailer Showcase Section -->
 <section id="trailer" class="loading" style="padding: 100px 40px; background: #f8f9fa;">
     <div style="max-width: 1400px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
-                <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Premium Fleet</span>
+            <div style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
+                <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Our Trailer</span>
             </div>
-            <h2 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">Meet Your Perfect Trailer</h2>
-            <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.7;">Engineered for excellence, designed for Namibia's roads. Our premium trailer combines durability, versatility, and modern features.</p>
+            <h2 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">Our 3m Trailer for Hire</h2>
+            <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.7;">Reliable double-axle trailer available daily in Windhoek. Perfect for local moves, hauling materials, or small loads around Khomasdal and the city.</p>
         </div>
         
         <div style="background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
             <div class="trailer-grid">
-                <div class="trailer-image" style="position: relative; height: 500px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);"></div>
-                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=600&fit=crop" alt="Professional Trailer" style="width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1;">
-                    <div style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 10px 20px; border-radius: 30px; z-index: 2;">
-                        <span style="color: white; font-weight: 700; font-size: 14px;">⭐ Premium Grade</span>
-                    </div>
-                </div>
+            <div class="trailer-image" style="
+    position: relative;
+    height: 480px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+">
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    "></div>
+    
+    <img src="./trailer.jpg" alt="WC Trailer Hire 3m Trailer" style="
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+        position: relative;
+        z-index: 1;
+        border-radius: 12px;
+        transition: transform 0.4s ease;
+    " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+    
+    <div style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255,255,255,0.18);
+        backdrop-filter: blur(12px);
+        padding: 10px 22px;
+        border-radius: 30px;
+        z-index: 2;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    ">
+        <span style="color: white; font-weight: 700; font-size: 15px; letter-spacing: 0.5px;">
+            Double Axle • Local Hire
+        </span>
+    </div>
+</div>
                 
                 <div style="padding: 50px;">
-                    <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Professional Grade Trailer</h3>
-                    <p style="font-size: 16px; color: #666; line-height: 1.8; margin-bottom: 30px;">Built to handle Namibia's diverse terrain. Perfect for moving, hauling equipment, safari camping, or business needs across the country.</p>
+                    <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Our Reliable 3m Trailer</h3>
+                    <p style="font-size: 16px; color: #666; line-height: 1.8; margin-bottom: 30px;">Practical caged trailer suited for everyday use in Windhoek – moving house items, building materials, equipment, or light loads. Easy pickup/drop-off from Khomasdal.</p>
                     
                     <div style="margin-bottom: 25px;">
                         <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-weight-hanging" style="color: white; font-size: 20px;"></i>
                             </div>
                             <div>
-                                <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: #1a1a1a;">Heavy Duty Capacity</h4>
-                                <p style="margin: 3px 0 0 0; font-size: 14px; color: #666;">Up to 2000kg load capacity</p>
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: #1a1a1a;">Load Capacity</h4>
+                                <p style="margin: 3px 0 0 0; font-size: 14px; color: #666;">Approx. 1500–1800kg (confirm when booking)</p>
                             </div>
                         </div>
                         
                         <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-ruler-combined" style="color: white; font-size: 20px;"></i>
                             </div>
                             <div>
-                                <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: #1a1a1a;">Spacious Dimensions</h4>
-                                <p style="margin: 3px 0 0 0; font-size: 14px; color: #666;">3.7m x 1.8m cargo space</p>
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: #1a1a1a;">Dimensions</h4>
+                                <p style="margin: 3px 0 0 0; font-size: 14px; color: #666;">3 m × 1.5 m × 1.8 m (internal cargo space)</p>
                             </div>
                         </div>
                         
                         <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-shield-alt" style="color: white; font-size: 20px;"></i>
                             </div>
                             <div>
@@ -877,146 +990,110 @@
                             </div>
                         </div>
                     </div>
+
+                    <p style="font-size: 14px; color: #888; margin: 0 0 20px 0;">Reg: N218-947W • Ready for daily hire at N$850 / 24 hours</p>
                     
-                    <a href="#booking" style="display: inline-block; text-decoration: none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px 35px; border-radius: 25px; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); margin-top: 10px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(102, 126, 234, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(102, 126, 234, 0.4)'">
-                        Reserve This Trailer <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    <a href="#booking" style="display: inline-block; text-decoration: none; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 16px 35px; border-radius: 25px; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(212,175,55,0.4); margin-top: 10px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(212,175,55,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(212,175,55,0.4)'">
+                        Hire This Trailer Now <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Features Section -->
 <section id="features" class="loading" style="padding: 100px 40px; background: white;">
     <div style="max-width: 1400px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 70px;">
-            <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
-                <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Why Choose Us</span>
+            <div style="display: inline-block; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
+                <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Why Hire From Us</span>
             </div>
-            <h2 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">Premium Features & Benefits</h2>
-            <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">Experience the difference with our world-class service and top-tier trailer</p>
+            <h2 style="font-size: 48px; font-weight: 800; color: #1a1a1a; margin: 0 0 20px 0;">Simple & Reliable Trailer Hire in Windhoek</h2>
+            <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">Local service from Khomasdal – affordable daily rates, well-kept trailer, and easy support when you need it.</p>
         </div>
         
         <div class="features-grid">
-            <div class="animate-card smooth-hover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 25px; padding: 45px 35px; text-align: center; box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);">
+            <div class="animate-card smooth-hover" style="background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 25px; padding: 45px 35px; text-align: center; box-shadow: 0 15px 40px rgba(212,175,55,0.3);">
                 <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
                     <i class="fas fa-clock" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: white; margin: 0 0 15px 0;">24/7 Availability</h3>
-                <p style="font-size: 15px; color: rgba(255,255,255,0.95); line-height: 1.7; margin: 0;">Book anytime, anywhere in Namibia. We're always ready when you need us most.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: white; margin: 0 0 15px 0;">Easy Booking</h3>
+                <p style="font-size: 15px; color: rgba(255,255,255,0.95); line-height: 1.7; margin: 0;">Call us anytime – quick confirmation and pickup from our Khomasdal spot.</p>
             </div>
             
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
                     <i class="fas fa-dollar-sign" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Best Prices</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Competitive NAD rates with no hidden fees. Quality service at affordable prices.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Affordable Rates</h3>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">N$850 per 24 hours – clear pricing with no hidden fees for local Windhoek hires.</p>
             </div>
             
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
                     <i class="fas fa-tools" style="font-size: 36px; color: white;"></i>
                 </div>
                 <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Well Maintained</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Regular inspections and maintenance ensure peak performance on all Namibian roads.</p>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Regular checks keep the trailer road-ready and safe for your Windhoek trips.</p>
             </div>
             
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
                     <i class="fas fa-headset" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Expert Support</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Local Namibian team ready to assist you throughout your rental journey.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Local Support</h3>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Windhoek-based – call or WhatsApp us for fast help before, during, or after your hire.</p>
             </div>
             
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
                     <i class="fas fa-file-contract" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Flexible Terms</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Daily, weekly, or monthly rentals. Choose what works best for you.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Simple Terms</h3>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Daily hires at N$850/24h – flexible pickup times, no long contracts needed.</p>
             </div>
             
             <div class="animate-card smooth-hover" style="background: white; border: 3px solid #f0f0f0; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
                     <i class="fas fa-certificate" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Certified Safe</h3>
-                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">All Namibian safety standards met and exceeded. Your peace of mind guaranteed.</p>
+                <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">Safe & Insured</h3>
+                <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Fully insured trailer – meets local standards so you can hire with peace of mind.</p>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Pricing Section -->
-<section id="pricing" class="loading" style="padding: 100px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
+<section id="pricing" class="loading" style="padding: 100px 40px; background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); position: relative; overflow: hidden;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); opacity: 0.6;"></div>
     
     <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
         <div style="text-align: center; margin-bottom: 60px;">
             <div style="display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 8px 24px; border-radius: 30px; margin-bottom: 20px;">
-                <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Simple Pricing</span>
+                <span style="color: white; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Our Rate</span>
             </div>
-            <h2 style="font-size: 48px; font-weight: 800; color: white; margin: 0 0 20px 0;">Transparent Rates, No Surprises</h2>
-            <p style="font-size: 18px; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">Choose the plan that fits your needs perfectly</p>
+            <h2 style="font-size: 48px; font-weight: 800; color: white; margin: 0 0 20px 0;">Straightforward Pricing</h2>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">N$850 per 24 hours – no hidden fees, local pickup in Khomasdal.</p>
         </div>
         
-        <div class="pricing-grid">
-            <div class="animate-card smooth-hover" style="background: white; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
-                    <i class="fas fa-calendar-day" style="font-size: 30px; color: white;"></i>
+        <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 700px; margin: 0 auto;">
+            <div class="animate-card smooth-hover pricing-card-featured" style="background: white; border-radius: 25px; padding: 50px 35px; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.2); transform: scale(1.05); position: relative;">
+                <div style="position: absolute; top: -15px; right: 30px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 8px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase;">Only Option</div>
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+                    <i class="fas fa-calendar-day" style="font-size: 36px; color: white;"></i>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">Daily Hire</h3>
-                <div style="margin: 20px 0 30px 0;">
-                    <span style="font-size: 52px; font-weight: 800; color: #667eea; line-height: 1;">N$450</span>
-                    <span style="font-size: 18px; color: #999;">/day</span>
+                <h3 style="font-size: 28px; font-weight: 800; color: #1a1a1a; margin: 0 0 15px 0;">Daily Trailer Hire</h3>
+                <div style="margin: 25px 0 35px 0;">
+                    <span style="font-size: 72px; font-weight: 900; color: #D4AF37; line-height: 1;">N$850</span>
+                    <span style="font-size: 24px; color: #555; font-weight: 600;">per 24 hours</span>
                 </div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; text-align: left;">
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Full day rental</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Insurance included</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>24/7 support</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Flexible pickup times</li>
+                <ul style="list-style: none; padding: 0; margin: 0 0 35px 0; text-align: left;">
+                    <li style="padding: 14px 0; color: #444; font-size: 16px; border-bottom: 1px solid #eee;"><i class="fas fa-check-circle" style="color: #D4AF37; margin-right: 12px;"></i>Full 24-hour rental</li>
+                    <li style="padding: 14px 0; color: #444; font-size: 16px; border-bottom: 1px solid #eee;"><i class="fas fa-check-circle" style="color: #D4AF37; margin-right: 12px;"></i>Insurance included</li>
+                    <li style="padding: 14px 0; color: #444; font-size: 16px; border-bottom: 1px solid #eee;"><i class="fas fa-check-circle" style="color: #D4AF37; margin-right: 12px;"></i>Easy pickup in Khomasdal</li>
+                    <li style="padding: 14px 0; color: #444; font-size: 16px;"><i class="fas fa-check-circle" style="color: #D4AF37; margin-right: 12px;"></i>Quick confirmation by phone/WhatsApp</li>
                 </ul>
-                <button onclick="selectPlan('Daily', 'N$450')" style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; border: none; border-radius: 15px; font-weight: 700; font-size: 15px; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Select Plan</button>
-            </div>
-            
-            <div class="animate-card pricing-card-featured" style="background: white; border-radius: 25px; padding: 45px 35px; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.2); transform: scale(1.05); position: relative;">
-                <div style="position: absolute; top: -15px; right: 30px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 8px 20px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase;">Most Popular</div>
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
-                    <i class="fas fa-calendar-week" style="font-size: 30px; color: white;"></i>
-                </div>
-                <h3 style="font-size: 20px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">Weekly Hire</h3>
-                <div style="margin: 20px 0 30px 0;">
-                    <span style="font-size: 52px; font-weight: 800; color: #667eea; line-height: 1;">N$2,800</span>
-                    <span style="font-size: 18px; color: #999;">/week</span>
-                </div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; text-align: left;">
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>7 full days rental</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Premium insurance</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Priority support</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Save N$350</li>
-                </ul>
-                <button onclick="selectPlan('Weekly', 'N$2,800')" style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; border: none; border-radius: 15px; font-weight: 700; font-size: 15px; cursor: pointer; box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Select Plan</button>
-            </div>
-            
-            <div class="animate-card smooth-hover" style="background: white; border-radius: 25px; padding: 45px 35px; text-align: center;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
-                    <i class="fas fa-calendar-alt" style="font-size: 30px; color: white;"></i>
-                </div>
-                <h3 style="font-size: 20px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">Monthly Hire</h3>
-                <div style="margin: 20px 0 30px 0;">
-                    <span style="font-size: 52px; font-weight: 800; color: #667eea; line-height: 1;">N$9,500</span>
-                    <span style="font-size: 18px; color: #999;">/month</span>
-                </div>
-                <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; text-align: left;">
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>30 days rental</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Full coverage insurance</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px; border-bottom: 1px solid #f0f0f0;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>VIP support</li>
-                    <li style="padding: 12px 0; color: #555; font-size: 15px;"><i class="fas fa-check-circle" style="color: #667eea; margin-right: 12px;"></i>Save N$4,000</li>
-                </ul>
-                <button onclick="selectPlan('Monthly', 'N$9,500')" style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; border: none; border-radius: 15px; font-weight: 700; font-size: 15px; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Select Plan</button>
+                <button onclick="selectPlan('Daily', 'N$850')" style="width: 100%; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 18px; border: none; border-radius: 15px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(212,175,55,0.4);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Hire Now</button>
             </div>
         </div>
     </div>
@@ -1027,14 +1104,14 @@
     <div style="max-width: 1200px; margin: 0 auto;">
         <div style="background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
             <div class="booking-grid">
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
+                <div style="background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
                     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);"></div>
-                    <div class="contact-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.15;">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=800&fit=crop" alt="Windhoek Cityscape" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="contact-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.12;">
+                        <img src="https://images.unsplash.com/photo-1564507592333-c9a29e9d8c6a?w=600&h=800&fit=crop" alt="Windhoek street view" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div style="position: relative; z-index: 1;">
-                        <h2 style="font-size: 42px; font-weight: 800; color: white; margin: 0 0 25px 0;">Ready to Get Started?</h2>
-                        <p style="font-size: 17px; color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 40px;">Book your trailer today and experience premium service across Namibia. From Windhoek to Swakopmund, Walvis Bay to Oshakati - we've got you covered!</p>
+                        <h2 style="font-size: 42px; font-weight: 800; color: white; margin: 0 0 25px 0;">Ready to Hire?</h2>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 40px;">Call or WhatsApp us to book your trailer. Pickup available in Khomasdal, Windhoek.</p>
                         
                         <div style="margin-bottom: 25px;">
                             <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
@@ -1042,28 +1119,18 @@
                                     <i class="fas fa-phone-alt" style="color: white; font-size: 22px;"></i>
                                 </div>
                                 <div>
-                                    <p style="margin: 0 0 5px 0; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;">Call Us</p>
-                                    <a href="tel:+26481234567" style="margin: 0; color: white; font-size: 20px; font-weight: 700; text-decoration: none;">+264 81 234 5678</a>
+                                    <p style="margin: 0 0 5px 0; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;">Call / WhatsApp</p>
+                                    <a href="tel:+264816561192" style="margin: 0; color: white; font-size: 22px; font-weight: 700; text-decoration: none;">081 656 1192</a>
                                 </div>
                             </div>
                             
                             <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
                                 <div style="width: 55px; height: 55px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <i class="fas fa-envelope" style="color: white; font-size: 22px;"></i>
-                                </div>
-                                <div>
-                                    <p style="margin: 0 0 5px 0; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;">Email Us</p>
-                                    <a href="mailto:info@trailerpro.com.na" style="margin: 0; color: white; font-size: 18px; font-weight: 700; text-decoration: none;">info@trailerpro.com.na</a>
-                                </div>
-                            </div>
-                            
-                            <div style="display: flex; align-items: center; gap: 20px;">
-                                <div style="width: 55px; height: 55px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                     <i class="fas fa-map-marker-alt" style="color: white; font-size: 22px;"></i>
                                 </div>
                                 <div>
-                                    <p style="margin: 0 0 5px 0; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;">Visit Us</p>
-                                    <p style="margin: 0; color: white; font-size: 18px; font-weight: 700;">123 Independence Ave, Windhoek</p>
+                                    <p style="margin: 0 0 5px 0; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;">Location</p>
+                                    <p style="margin: 0; color: white; font-size: 18px; font-weight: 700;">303 Lasuriet Street, Khomasdal, Windhoek</p>
                                 </div>
                             </div>
                         </div>
@@ -1071,46 +1138,41 @@
                 </div>
                 
                 <div style="padding: 60px 50px;">
-                    <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">Book Your Trailer</h3>
-                    <p style="color: #666; margin: 0 0 35px 0; font-size: 15px;">Fill out the form and we'll confirm your booking</p>
+                    <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">Send Booking Request</h3>
+                    <p style="color: #666; margin: 0 0 35px 0; font-size: 15px;">Fill in the form – we'll confirm availability and details quickly.</p>
                     
                     <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <input type="hidden" name="selected_plan" id="selectedPlanInput">
-                        <input type="hidden" name="plan_price" id="planPriceInput">
+                        <input type="hidden" name="selected_plan" id="selectedPlanInput" value="Daily">
+                        <input type="hidden" name="plan_price" id="planPriceInput" value="N$850">
                         
                         <div style="margin-bottom: 20px;">
                             <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Full Name *</label>
-                            <input type="text" name="name" placeholder="John Doe" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Email Address *</label>
-                            <input type="email" name="email" placeholder="john@example.com" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                            <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
                         </div>
                         
                         <div style="margin-bottom: 20px;">
                             <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Phone Number *</label>
-                            <input type="tel" name="phone" placeholder="+264 81 234 5678" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                            <input type="tel" name="phone" placeholder="081 656 1192" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
                         </div>
                         
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
                             <div>
                                 <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Pick Up Date *</label>
-                                <input type="date" name="pickup_date" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                                <input type="date" name="pickup_date" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
                             </div>
                             <div>
                                 <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Return Date *</label>
-                                <input type="date" name="return_date" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                                <input type="date" name="return_date" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
                             </div>
                         </div>
                         
                         <div style="margin-bottom: 25px;">
-                            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Additional Notes</label>
-                            <textarea name="notes" placeholder="Tell us about your requirements..." style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif; resize: vertical; min-height: 100px;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+                            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">What do you need the trailer for?</label>
+                            <textarea name="notes" placeholder="e.g. moving house, transporting materials..." style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif; resize: vertical; min-height: 100px;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
                         </div>
                         
-                        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 35px rgba(102, 126, 234, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(102, 126, 234, 0.4)'">
-                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Submit Booking Request
+                        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(212,175,55,0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 35px rgba(212,175,55,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(212,175,55,0.4)'">
+                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Send Booking Request
                         </button>
                     </form>
                 </div>
@@ -1118,71 +1180,74 @@
         </div>
     </div>
 </section>
-
 <!-- Footer -->
 <footer id="contact" class="loading" style="background: #1a1a1a; padding: 60px 40px 30px 40px; color: white;">
-    <div style="max-width: 1400px; margin: 0 auto;">
+    <div style="max-width: 1200px; margin: 0 auto;">
         <div class="footer-grid" style="margin-bottom: 50px;">
             <div>
                 <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-trailer" style="color: white; font-size: 20px;"></i>
+                    <div style="width: 45px; height: 45px; background: #000; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: #D4AF37; font-size: 28px; font-weight: 900;">WC</span>
                     </div>
-                    <h3 style="margin: 0; font-size: 22px; font-weight: 700;">TrailerPro</h3>
+                    <h3 style="margin: 0; font-size: 22px; font-weight: 700;">WC Trailer Hire</h3>
                 </div>
-                <p style="color: #999; line-height: 1.7; font-size: 14px;">Your trusted partner for premium trailer hire services across Namibia. Quality, reliability, and exceptional service - every time.</p>
+                <p style="color: #999; line-height: 1.7; font-size: 14px;">Local trailer hire in Windhoek. 3m double-axle trailer for daily use at N$850 per 24 hours. Easy pickup from our Khomasdal location.</p>
                 <div style="display: flex; gap: 15px; margin-top: 20px;">
-                    <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none;" onmouseover="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none;" onmouseover="this.style.background='linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
                         <i class="fab fa-facebook-f" style="color: white; font-size: 16px;"></i>
                     </a>
-                    <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none;" onmouseover="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none;" onmouseover="this.style.background='linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
                         <i class="fab fa-instagram" style="color: white; font-size: 16px;"></i>
                     </a>
-                    <a href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none;" onmouseover="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <a href="https://wa.me/264816561192" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none;" onmouseover="this.style.background='linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
                         <i class="fab fa-whatsapp" style="color: white; font-size: 16px;"></i>
                     </a>
                 </div>
+                <p style="margin-top: 15px; color: #aaa; font-size: 13px;">Call / WhatsApp: <a href="tel:+264816561192" style="color: #D4AF37; text-decoration: none;">081 656 1192</a></p>
             </div>
-            
+           
             <div>
                 <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 20px 0;">Quick Links</h4>
                 <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 12px;"><a href="#home" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Home</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#about" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">About Us</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#trailer" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Our Trailer</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#features" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Features</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Pricing</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#home" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Home</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#about" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">About Us</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#trailer" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Our Trailer</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#features" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Why Hire From Us</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Pricing</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#booking" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Book Now</a></li>
                 </ul>
             </div>
-            
+           
             <div>
-                <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 20px 0;">Services</h4>
+                <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 20px 0;">Our Service</h4>
                 <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Daily Hire</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Weekly Hire</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Monthly Hire</a></li>
-                    <li style="margin-bottom: 12px;"><a href="#contact" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#999'">Support</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Daily Hire – N$850 / 24h</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#trailer" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">3m Double-Axle Trailer</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#booking" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Book & Pickup</a></li>
+                    <li style="margin-bottom: 12px;"><a href="#contact" style="color: #999; text-decoration: none; font-size: 14px;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#999'">Contact Us</a></li>
                 </ul>
             </div>
-            
+           
             <div>
-                <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 20px 0;">Newsletter</h4>
-                <p style="color: #999; font-size: 14px; margin-bottom: 15px;">Subscribe for updates and special offers</p>
-                <div style="display: flex; gap: 10px;">
-                    <input type="email" id="newsletterEmail" placeholder="Your email" style="flex: 1; padding: 12px 15px; border: 2px solid #333; background: transparent; color: white; border-radius: 10px; font-size: 14px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#333'">
-                    <button onclick="subscribeNewsletter()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 20px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 20px 0;">Get in Touch</h4>
+                <p style="color: #999; font-size: 14px; margin-bottom: 15px;">Need the trailer today? Call or WhatsApp us – we’ll check availability and sort it out quickly.</p>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="tel:+264816561192" style="display: inline-flex; align-items: center; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; width: fit-content;">
+                        <i class="fas fa-phone" style="margin-right: 10px;"></i> Call 081 656 1192
+                    </a>
+                    <a href="https://wa.me/264816561192" target="_blank" style="display: inline-flex; align-items: center; background: #25D366; color: white; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; width: fit-content;">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Now
+                    </a>
                 </div>
+                <p style="margin-top: 15px; color: #aaa; font-size: 13px;">303 Lasuriet Street<br>Khomasdal, Windhoek</p>
             </div>
         </div>
-        
+       
         <div style="border-top: 1px solid #333; padding-top: 30px; text-align: center;">
-            <p style="color: #666; margin: 0; font-size: 14px;">&copy; 2026 TrailerPro Namibia. All rights reserved. | <a href="#" style="color: #667eea; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #667eea; text-decoration: none;">Terms of Service</a></p>
+            <p style="color: #666; margin: 0; font-size: 14px;">&copy; 2026 WC Trailer Hire. All rights reserved.</p>
         </div>
     </div>
 </footer>
-
 <script>
 const bookedDates = ['2026-02-20','2026-02-21','2026-02-22','2026-03-05','2026-03-06','2026-03-15'];
 
@@ -1391,7 +1456,7 @@ window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
 
-console.log('🚀 TrailerPro Namibia - Premium Experience Loaded');
+console.log('🚀 WC Trailer Hire - Premium Experience Loaded');
 </script>
 
 </body>
