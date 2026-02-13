@@ -1137,45 +1137,100 @@
                     </div>
                 </div>
                 
-                <div style="padding: 60px 50px;">
-                    <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">Send Booking Request</h3>
-                    <p style="color: #666; margin: 0 0 35px 0; font-size: 15px;">Fill in the form – we'll confirm availability and details quickly.</p>
-                    
-                    <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <input type="hidden" name="selected_plan" id="selectedPlanInput" value="Daily">
-                        <input type="hidden" name="plan_price" id="planPriceInput" value="N$850">
-                        
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Full Name *</label>
-                            <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
-                        </div>
-                        
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Phone Number *</label>
-                            <input type="tel" name="phone" placeholder="081 656 1192" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
-                            <div>
-                                <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Pick Up Date *</label>
-                                <input type="date" name="pickup_date" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
-                            </div>
-                            <div>
-                                <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">Return Date *</label>
-                                <input type="date" name="return_date" required style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'">
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 25px;">
-                            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">What do you need the trailer for?</label>
-                            <textarea name="notes" placeholder="e.g. moving house, transporting materials..." style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif; resize: vertical; min-height: 100px;" onfocus="this.style.borderColor='#D4AF37'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
-                        </div>
-                        
-                        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(212,175,55,0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 35px rgba(212,175,55,0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(212,175,55,0.4)'">
-                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Send Booking Request
-                        </button>
-                    </form>
-                </div>
+<div style="padding: 60px 50px;">
+    <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px 0;">
+        Send Booking Request
+    </h3>
+    <p style="color: #666; margin: 0 0 35px 0; font-size: 15px;">
+        Fill in the form – we'll confirm availability and details quickly.
+    </p>
+    
+    <form id="bookingForm" action="https://formspree.io/f/xvzbkblv" method="POST">
+
+        <!-- Hidden Plan Fields -->
+        <input type="hidden" name="selected_plan" id="selectedPlanInput" value="Daily">
+        <input type="hidden" name="plan_price" id="planPriceInput" value="N$850">
+
+        <!-- Full Name -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">
+                Full Name *
+            </label>
+            <input type="text" name="name" placeholder="Your name" required
+                style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;"
+                onfocus="this.style.borderColor='#D4AF37'"
+                onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+
+        <!-- Email -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">
+                Email Address *
+            </label>
+            <input type="email" name="email" placeholder="your@email.com" required
+                style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;"
+                onfocus="this.style.borderColor='#D4AF37'"
+                onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+
+        <!-- Phone -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">
+                Phone Number *
+            </label>
+            <input type="tel" name="phone" placeholder="081 656 1192" required
+                style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;"
+                onfocus="this.style.borderColor='#D4AF37'"
+                onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+
+        <!-- Dates -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+            <div>
+                <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">
+                    Pick Up Date *
+                </label>
+                <input type="date" name="pickup_date" required
+                    style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;"
+                    onfocus="this.style.borderColor='#D4AF37'"
+                    onblur="this.style.borderColor='#e0e0e0'">
+            </div>
+
+            <div>
+                <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">
+                    Return Date *
+                </label>
+                <input type="date" name="return_date" required
+                    style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif;"
+                    onfocus="this.style.borderColor='#D4AF37'"
+                    onblur="this.style.borderColor='#e0e0e0'">
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; font-weight: 600; color: #555; margin-bottom: 8px; font-size: 14px;">
+                What do you need the trailer for?
+            </label>
+            <textarea name="notes"
+                placeholder="e.g. moving house, transporting materials..."
+                style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; font-family: 'Poppins', sans-serif; resize: vertical; min-height: 100px;"
+                onfocus="this.style.borderColor='#D4AF37'"
+                onblur="this.style.borderColor='#e0e0e0'"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+            style="width: 100%; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 10px 25px rgba(212,175,55,0.4);"
+            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 35px rgba(212,175,55,0.5)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(212,175,55,0.4)'">
+            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
+            Send Booking Request
+        </button>
+
+    </form>
+</div>
+
             </div>
         </div>
     </div>
